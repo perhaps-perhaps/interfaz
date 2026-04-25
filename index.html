@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>[Your Business Name]</title>
+<meta name="description" content="[One-line description of your business]" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --bg: #ffffff;
+    --ink: #0a0a0a;
+    --ink-soft: #404040;
+    --ink-muted: #888888;
+    --rule: #e8e8e8;
+    --display: "Instrument Serif", Georgia, serif;
+    --body: "Geist", -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--body);
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.55;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection { background: var(--ink); color: var(--bg); }
+
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  header { padding: 2rem 0; }
+  .nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 2rem;
+  }
+  .brand {
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  nav ul {
+    display: flex;
+    gap: 1.75rem;
+    list-style: none;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+  }
+  nav a {
+    color: var(--ink-muted);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+  nav a:hover { color: var(--ink); }
+
+  .hero { padding: 7rem 0 6rem; }
+  h1 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    margin-bottom: 2rem;
+    max-width: 20ch;
+  }
+  .lede {
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    max-width: 52ch;
+    line-height: 1.6;
+  }
+
+  section { padding: 4rem 0; }
+  section + section { border-top: 1px solid var(--rule); }
+  .section-label {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-muted);
+    margin-bottom: 2.5rem;
+    display: block;
+  }
+  h2 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    letter-spacing: -0.01em;
+    margin-bottom: 1.75rem;
+    line-height: 1.25;
+  }
+  .about p {
+    font-size: 1rem;
+    color: var(--ink-soft);
+    max-width: 58ch;
+  }
+
+  .contact-list {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--rule);
+  }
+  .contact-row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 2rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: baseline;
+  }
+  .contact-row .label {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-muted);
+  }
+  .contact-row a, .contact-row .value {
+    font-size: 1rem;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s ease;
+    padding-bottom: 1px;
+  }
+  .contact-row a:hover { border-bottom-color: var(--ink); }
+
+  .privacy h3 {
+    font-family: var(--body);
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin: 2rem 0 0.6rem;
+    color: var(--ink);
+  }
+  .privacy h3:first-of-type { margin-top: 1rem; }
+  .privacy p, .privacy li {
+    font-size: 0.94rem;
+    color: var(--ink-soft);
+    margin-bottom: 0.75rem;
+  }
+  .privacy ul { padding-left: 1.25rem; margin-bottom: 1rem; }
+  .privacy a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--rule);
+    transition: text-decoration-color 0.15s ease;
+  }
+  .privacy a:hover { text-decoration-color: var(--ink); }
+  .privacy .timestamp {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--ink-muted);
+    margin-bottom: 1.5rem;
+  }
+  .privacy .note {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    font-size: 0.85rem;
+    color: var(--ink-muted);
+  }
+
+  footer {
+    padding: 2.5rem 0 3rem;
+    border-top: 1px solid var(--rule);
+    color: var(--ink-muted);
+    font-family: var(--mono);
+    font-size: 0.76rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  footer a {
+    color: var(--ink-muted);
+    text-decoration: none;
+  }
+  footer a:hover { color: var(--ink); }
+
+  @media (max-width: 600px) {
+    .hero { padding: 4rem 0 3rem; }
+    section { padding: 3rem 0; }
+    nav ul { gap: 1.25rem; }
+    .contact-row {
+      grid-template-columns: 1fr;
+      gap: 0.4rem;
+      padding: 1rem 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="nav-inner">
+      <div class="brand">[your-business]</div>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#privacy">Privacy</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Interfaz</h1>
+    <p class="lede">Conexión, siempre</p>
+  </section>
+
+  <section id="about" class="about">
+    <span class="section-label">01 — About</span>
+    <h2>¿Qué hacemos?</h2>
+    <p>
+      Mi propósito es facilitar la comunicación entre personas y tecnología.
+    </p>
+  </section>
+
+  <section id="privacy" class="privacy">
+    <span class="section-label">03 — Privacy</span>
+    <h2>Privacy Policy</h2>
+    <p class="timestamp">Last updated: [Date]</p>
+    <p>
+      Interfaz ("we", "us", or "our") operates the website
+      <a href="#">[example.com]</a> (the "Service"). This policy explains
+      our approach to your privacy when you use our Service.
+    </p>
+
+    <h3>No data collection</h3>
+    <p>
+      <strong>We do not collect, store, or process any personal data from
+      visitors to this website.</strong> We do not use analytics, tracking
+      pixels, advertising networks, or any third-party scripts that profile
+      visitors.
+    </p>
+
+    <h3>No cookies</h3>
+    <p>
+      This website does not set any cookies, and does not use local storage
+      or similar browser-based tracking technologies.
+    </p>
+
+    <h3>Server logs</h3>
+    <p>
+      This site is hosted on GitHub Pages. As with any web host, GitHub may
+      log basic technical information (such as IP addresses and browser type)
+      for the operation and security of its infrastructure. We do not have
+      access to these logs and do not use them. GitHub's privacy practices
+      are described in their
+      <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">privacy statement</a>.
+    </p>
+
+    <h3>Contact form &amp; email</h3>
+    <p>
+      If you choose to contact us via the email address listed on this site,
+      we will receive the information you send (your email address and
+      message contents). We use this information solely to reply to your
+      inquiry and do not share it with anyone else.
+    </p>
+
+    <h3>Third-party links</h3>
+    <p>
+      This site may contain links to external websites. We are not responsible
+      for the privacy practices of those sites and encourage you to review
+      their policies.
+    </p>
+
+    <h3>Changes to this policy</h3>
+    <p>
+      If our practices ever change, we will update this page accordingly. The
+      "last updated" date at the top reflects the most recent revision.
+    </p>
+  </section>
+
+  <footer>
+    <div>© <span id="year"></span> Interfaz</div>
+    <div><a href="#privacy">Privacy Policy</a></div>
+  </footer>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
